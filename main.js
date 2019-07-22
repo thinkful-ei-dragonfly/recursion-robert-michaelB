@@ -30,6 +30,44 @@ function reverseString(str) {
   return str[str.length - 1] + reverseString(str.substring(0, str.length - 1));
 }
 
+function triangularNumber(n) {  
+  if(n === 0) {
+    return 0;
+  }
+  return n + triangularNumber(n-1);
+}
+
+function stringSplitter(str, separator) {
+  if(str.length === 0 ) {
+    return '';
+  }
+  if ( str[0] === separator ) {
+    return stringSplitter(str.substring(1), separator)
+  } else {
+    return str[0] + stringSplitter(str.substring(1), separator)
+  }
+}
+
+function fibonacci(n) 
+{
+  if (n===1) 
+  {
+    return [0, 1];
+  } 
+  else 
+  {
+    var s = fibonacci(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    return s;
+  }
+}
+
+function factorial(n) {  
+  if(n === 0) {
+    return 1;
+  }
+  return n * factorial(n-1);
+}
 
 function main() {
   // let sheep = 3;
@@ -42,11 +80,21 @@ function main() {
   // console.log(powerCalculatorRec(10, 3)); 
 
   /* exercise 3 */
-  console.log(reverseString('abcd'));
+  // console.log(reverseString('abcd'));
   // console.log(reverseString())
 
   /* exercise 4 */
+  // console.log(triangularNumber(6));
   
+  /* exercise 5 */
+  // console.log(stringSplitter('02/20/2020', '/'));
+
+  /* exercise 6 */
+  // console.log(fibonacci(7));
+
+  /* exercise 7 */
+  console.log(factorial(5));
+
 }
 
 main();
